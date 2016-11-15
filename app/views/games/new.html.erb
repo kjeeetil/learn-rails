@@ -1,0 +1,16 @@
+<% content_for :title do %>Game<% end %>
+<h3>Rock Paper Scissors</h3>
+<div class="form">
+	<%= simple_form_for @game do |form| %>
+  		<%= form.hidden_field :rps, value: 0 %>
+		<%= form.button :submit, 'Rock', class: 'submit' %>
+	<% end %>
+	<%= simple_form_for @game do |form| %>
+  		<%= form.hidden_field :rps, value: 1 %>
+		<%= form.button :submit, 'Paper', class: 'submit' %>
+	<% end %>
+	<%= simple_form_for @game do |form| %>
+  		<%= form.hidden_field :rps, value: 2 %>
+		<%= form.button :submit, 'Scissors', class: 'submit' %>
+	<% end %>
+</div>
