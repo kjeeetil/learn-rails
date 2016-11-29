@@ -1,16 +1,21 @@
 <% content_for :title do %>Game<% end %>
 <h3>Rock Paper Scissors</h3>
 <div class="form">
-	<%= simple_form_for @game do |form| %>
+	<pre>
+  	<%= @btnclr.inspect %>
+  	<%= @count.inspect %>
+  	
+	</pre>
+	<%= simple_form_for @game, wrapper: :inline_form, html: {class: 'form-inline'} do |form| %>
   		<%= form.hidden_field :rps, value: 0 %>
-		<%= form.button :submit, 'Rock', class: 'submit' %>
+		<%= form.button :submit, 'Rock', class: 'submit'+@btnclr[0].inspect %>
 	<% end %>
-	<%= simple_form_for @game do |form| %>
+	<%= simple_form_for @game, wrapper: :inline_form, html: {class: 'form-inline'} do |form| %>
   		<%= form.hidden_field :rps, value: 1 %>
-		<%= form.button :submit, 'Paper', class: 'submit' %>
+		<%= form.button :submit, 'Paper', class: 'submit'+@btnclr[1].inspect %>
 	<% end %>
 	<%= simple_form_for @game do |form| %>
   		<%= form.hidden_field :rps, value: 2 %>
-		<%= form.button :submit, 'Scissors', class: 'submit' %>
+		<%= form.button :submit, 'Scissors', class: 'submit'+@btnclr[2].inspect %>
 	<% end %>
 </div>

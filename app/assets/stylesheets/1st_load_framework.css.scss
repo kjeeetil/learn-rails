@@ -26,10 +26,23 @@ img {
   @extend .col-md-6;
   @extend .text-center;
   }
-.submit {
+.submit0 {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
+  @extend .btn-block;
+  }
+  .submit1 {
+  @extend .btn;
+  @extend .btn-warning;
+  @extend .btn-lg;
+  @extend .btn-block;
+  }
+  .submit2 {
+  @extend .btn;
+  @extend .btn-danger;
+  @extend .btn-lg;
+  @extend .btn-block;
   }
 // apply styles to HTML elements
 // to make views framework-neutral

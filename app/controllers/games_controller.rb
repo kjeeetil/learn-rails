@@ -2,6 +2,13 @@ class GamesController < ApplicationController
 #	include ApplicationHelper
 	def new
 		@game = Game.new
+		@btnclr = [0,1,2].shuffle
+		if @count == nil
+			@count = 0
+		end
+
+		@count = @count +1
+		@count.save
 	end
 
 
@@ -26,10 +33,8 @@ class GamesController < ApplicationController
 		notice =["Computer picked #{intr[comp]}",
 				 "You picked #{intr[usr]}",
 				 "#{res}"]
-		flash[:notice] = notice.join(". ").html_safe
-		#flash_message :notice, notice[0]
-		#flash[:notice] = notice[1]
-		#flash[:notice] = notice[2]
+				 
+		flash[:notice] = notice.join(". ")
 
 		redirect_to new_game_path
 			
