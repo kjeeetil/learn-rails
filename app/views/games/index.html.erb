@@ -1,0 +1,25 @@
+<h1>Listing games</h1>
+<p><%= link_to 'New game', new_game_path %></p>  
+ 
+<div class="table-responsive">
+  <table class="table"
+  <tr>
+    <th>Choice</th>
+    <th>Color</th>
+    <th>Result</th>
+    <th>Time</th> 
+  </tr>
+
+  <% res = ["It's a tie!", "You lost!", "You won!"] %>
+  <% choice = ['Rock', 'Paper', 'Scissors'] %>
+  <% clr = ['Blue', 'Yellow', 'Red'] %>
+  <% @games.each do |game| %>
+    <tr>
+      <td><%= choice[game.choice] %></td>
+      <td><%= clr[game.color] %></td>
+      <td><%= res[game.result] %></td>
+      <td><%= game.created_at %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
