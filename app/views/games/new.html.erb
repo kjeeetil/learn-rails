@@ -1,6 +1,7 @@
 <% content_for :title do %>Game<% end %>
 <h3>Rock Paper Scissors</h3>
 <p><%= link_to 'Games history', games_path %></p> 
+
 <div class="form">
 	<%= simple_form_for @game, wrapper: :inline_form, html: {class: 'form-inline'} do |form| %>
   		<%= form.hidden_field :rps, value: 0 %>

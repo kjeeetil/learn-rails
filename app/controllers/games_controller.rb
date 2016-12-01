@@ -1,12 +1,13 @@
 class GamesController < ApplicationController
 #	include ApplicationHelper
 	def index
-		@games =Game.all
+		@games = Game.all
 	end
 
 	def show
 		@game = Game.find(params[:id])
 	end
+
 	def new
 		@game = Game.new(params[:game])
 		@btnclr = [0,1,2].shuffle
@@ -26,7 +27,6 @@ class GamesController < ApplicationController
 
 		comp = 3*rand
 		comp = comp.floor
-		
 
 		if usr == comp
 			@game.result = 0
