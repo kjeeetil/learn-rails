@@ -40,8 +40,13 @@ class GamesController < ApplicationController
 				 "Computer picked #{@intr[comp]}",
 				 "#{@res[@game.result]}"]
 				 
-
-		flash[:notice] = notice.join(". ")
+		if @game.result == 0
+			flash[:warning] = notice.join(". ")
+		elsif @game.result == 1
+			flash[:danger] = notice.join(". ")
+		elsif @game.result == 2
+			flash[:success] = notice.join(". ")
+		end
 
 		@game.save
 
